@@ -107,8 +107,6 @@ $(".recipe").on("click", function () {
             //appending those elements to our container div with id of recipes
             $("#post").append(recipe_title, recipe_image, label, ingredientList);
 
-            console.log(queryURL); 
-
         }
 
     })
@@ -136,20 +134,38 @@ $(".walmartBtn").on("click", function () {
     $.ajax({
         url: queryURL,
         method: "GET",
-    }).done(function (results) {
-        console.log(results); 
-        // items is results.items
-        var items = results.items; 
-        // for loop to iterate through items array 
+
+    }).done(function (query) {
+        console.log(query); 
+
+        var items = query.items; 
         for (var i = 0; i < 3; i++) {
-            // items[i] (each item) is an object 
-            var name = items[i].name;
+            // will return only 3 hits
+            var name = items[i].item.name;
 
 
             $("#post").append(name);
-            console.log(results.items); 
+            console.log(query.items); 
             console.log(searchURL); 
         }
+
+
+        // var recipes = results.hits;
+        // //for loop to iterate through recipes array
+        // for (var i = 0; i < 3; i++) {
+        //     //recipes[i] (each recipe) is an object
+        //     var recipe = recipes[i].recipe;
+        //     var title = recipe.label;
+        //     var image_url = recipe.image;
+
+        // // post onto HTML page 
+        // var name_post = $('<h3>').html(name);
+
+
+ 
+       
+
+
     })
 
 });
