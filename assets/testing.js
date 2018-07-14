@@ -10,9 +10,9 @@ var title = "";
 var image_url = "";
 var ingredientLines = "";
 var ingredientList = "";
-
-// WALMART API
-var exclusionList = ['1', '2', '3', '5', '6', '7', '8', '9', '0', 'of', 'cup', 'teaspoons', 'tablespoons'];
+var ingredient = "";
+var ingredientName = ""; 
+var price = ""; 
 
 
 // =========================
@@ -49,48 +49,75 @@ $(".recipe").on("click", function () {
             var ingredients = recipe.ingredientLines;
             var ingredientList = $('<ul>');
 
-            // ========================
+            // ====================================
             // ITERATING THROUGH INGREDIENTS ARRAY  
-            // ========================
+            // ====================================
             //iterating through ingredients array
             for (var j = 0; j < ingredients.length; j++) {
-                var ingredient = ingredients[j];
-                var li = $('<li>').html(ingredient);
-                ingredientList.append(li);
+               
+            
 
-                // ============================
-                // WALMART API: PULLING PRICES
-                // ============================
-                var ingredientName = ingredient;
+                // =======================================================================
+                // PREPARING INGREDIENT LIST TO SEARCH FOR PRICES ON WALMART API 
+                // =======================================================================
+                var ingredientName = ingredient.toLocaleLowerCase();
+
+
+                // console.log(ingredientName);
+                // console.log(ingredientName.length);
+
+                // use regular expression to remove measurement details from ingredient list
+                var ingredientName = ingredientName.replace(/\d/g, '').replace(/cup/g, '').replace(/\//g, '').replace(/\(ml\)/g, '').replace(/tablespoons/g, '').replace(/-/g, '').replace(/inch/g, '').replace(/pounds/g, '').replace(/\(cm\)/g, '').replace(/\(g\)/g, '').replace(/thawed/g, '').replace(/peeled and grated/g, '').replace(/water/g, '');
+
+                ingredientName = ingredientName.trim();
                 console.log(ingredientName);
+            
 
-                // for loop to remove measurement details from ingredient list
-                // just to show what is in the initial arrays
-                // remove measurement details from ingredient list
-                for (var k = 0; k < ingredientName.length; k++) {
-                    for (var p = 0; p < exclusionList.length; p++) {
-                        if (ingredientName[k].includes(exclusionList[p])) {
-                            var string = ingredientName[k].replace(exclusionList[p], '');
-                            ingredientName[k] = string.trim()
-                            console.log(ingredientName[i]);
-                        }
+                // ============
+                // WALMART API 
+                // ============
+                var apiKey = "gw9az82quh9v3geuvydmm2p6";
+                var queryItem = ingredientName;
+                var queryURL = "https://cors-anywhere.herokuapp.com/https://api.walmartlabs.com/v1/search?query=" + queryItem + "&apiKey=" + apiKey;
+
+                // AJAX CALL
+                $.ajax({
+                    url: queryURL,
+                    method: "GET",
+                }).done(function (results) {
+                    console.log(results);
+                    // items is results.items
+                    var items = results.items;
+
+                    // for loop to iterate through items array 
+                    for (var i = 0; i < 2; i++) {
+                        // items[i] (each item) is an object 
+                        var name = items[i].name;
+                        var price = items[i].salePrice; 
+                        console.log("Ingrident Name: " + name); 
+                        console.log("Price: " + price); 
+                        console.log("URL: " + queryURL); 
+
                     }
-                }
+                });
+
+                ingredient = ingredients[j];
+                var li = $('<li>').html(ingredient + " " + price);
+                ingredientList.append(li);
             }
+                // post items onto HTML page
+                var recipe_title = $('<h3 class="card-title">').html(title);
+                var recipe_image = $('<img>').attr('src', image_url);
+                var label = $('<h4>').html('Ingredients');
+                //appending those elements to our container div with id of recipes
+                $("#post").append(recipe_title, recipe_image, label, ingredientList);
 
-            // }
-
-            // post items onto HTML page
-            var recipe_title = $('<h3 class="card-title">').html(title);
-            var recipe_image = $('<img>').attr('src', image_url);
-            var label = $('<h4>').html('ingredientLines');
-            //appending those elements to our container div with id of recipes
-            $("#post").append(recipe_title, recipe_image, label, ingredientList);
-
-            console.log(queryURL);
+                console.log(queryURL);
+            
         }
-    })
+    });
 });
+
 
 
 // =========================
@@ -129,48 +156,17 @@ $(".walmartBtn").on("click", function () {
         // items is results.items
         var items = results.items;
 
-
-        // ================================
-        // WORD REMOVAL : FOR WALMART API 
-        // ================================
-        // When a participant puts in a recipe name, the name is used to search the Edamam API
-        // The Edamam API returns a list of ingredientLines 
-        // We take that list of ingredientLines from the Edamam API --> //WORK ON//
-        // Each ingredient item is the search query for Walmart 
-        // 
-        // ===========
-        //array of excluded strings
-        var exclusionList = ['1', '2', '3', '5', '6', '7', '8', '9', '0', 'of', 'cup', 'teaspoons']
-        ingredientLines = ingredientLines.toLowerCase();
-        //removing
-        for (var i = 0; i < ingredientLines.length; i++) {
-            //just to show what is in the initial arrays
-            console.log(ingredientLines[i]);
-            //Do something
-            for (var j = 0; j < exclusionList.length; j++) {
-
-                if (ingredientLines[i].includes(exclusionList[j])) {
-                    var string = ingredientLines[i].replace(exclusionList[j], '');
-                    ingredientLines[i] = string.trim()
-                }
-            }
-        }
-
-
         // for loop to iterate through items array 
         for (var i = 0; i < 3; i++) {
             // items[i] (each item) is an object 
             var name = items[i].name;
-
 
             $("#post").append(name);
             console.log(results.items);
             console.log(searchURL);
         }
     })
-
 });
-
 
 // 5 Recipes 
 // Display: link that opens module 
