@@ -14,6 +14,8 @@ var ingredientName = "";
 var price = "";
 var totalPrice = [0, 0, 0];
 var arrayPrice = [];
+var waitForPrice;
+
 
 // =========================
 // CALLING RECIPES
@@ -24,7 +26,6 @@ $(".recipe").on("click", function () {
     console.log(x);
 
     // SET UP VARIABLES FOR AJAX CALL 
-
     var queryURL = "https://api.edamam.com/search?q=" + x + "&app_id=" + appId + "&app_key=" + appKey;
     //testing
     console.log(queryURL);
@@ -39,44 +40,43 @@ $(".recipe").on("click", function () {
         //recipes is results.hits which is an array of recipes
         var recipes = results.hits;
 
-        for (var i = 0; i < 3; i++) {
-            console.log('STATEMENT:' + getTotalPrice(recipes[i]));
-            console.log(typeof totalPrice[i]);
 
+        for (var i = 0; i < 3; i++) {
+
+            getTotalPrice(recipes[i]);
+            waiting();
+            // console.log('STATEMENT:' + getTotalPrice(recipes[i]));
+            console.log(typeof totalPrice[i]);
 
             // ==============================================
             // PUT TIMEOUT FUNCTION HERE
             // REMEMBER TO CLEAR TIMEOUT 
             // ===============================================
 
-
-            console.log("==================================");
+            console.log("=============================================================");
             console.log("This is the Total Price For One Recipe: " + totalPrice[i]);
-            console.log("==================================");
-        }
-       
+            console.log("=============================================================");
 
+        }
+        stopWaiting();
         console.log(queryURL);
     });
 });
 
 // ======================
-// TIMER FUNCTION 
+// TIMER FUNCTIONS
 // ======================
-var waitForPrice;
 
 function waiting() {
     //waits 3 seconds before quering price 
-    waitForPrice = setTimeout(getTotalPrice, 3000);
-}
-
-function getTotalPrice() {
-    alert("Hello!");
+    waitForPrice = setTimeout(5000);
+    alert("Waited!");
 }
 
 function stopWaiting() {
     clearTimeout(waitForPrice);
 }
+
 
 // =========================================================
 // QUERY THE WALMART API TO GET PRICES OF INGREDIENTS
@@ -144,10 +144,10 @@ function getTotalPrice(hitObj) {
             if (price !== undefined) {
                 totalPrice += price;
             }
-            console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             console.log("Local Variable Total Price is: " + totalPrice);
             console.log(typeof totalPrice);
-            console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 
             return totalPrice;
 
@@ -156,10 +156,13 @@ function getTotalPrice(hitObj) {
         var li = $('<li>').html(ingredient + " " + price);
         ingredientList.append(li);
     }
-     // post items onto HTML page
- var recipe_title = $('<h3 class="card-title">').html(title);
- var recipe_image = $('<img>').attr('src', image_url);
- var label = $('<h4>').html('Ingredients');
- //appending those elements to our container div with id of recipes
- $("#post").append(recipe_title, recipe_image, label, ingredientList);
+
+    // ==================================
+    // DISPLAY ITEMS ONTO HTML PAGE 
+    // ==================================
+    var recipe_title = $('<h3 class="card-title">').html(title);
+    var recipe_image = $('<img>').attr('src', image_url);
+    var label = $('<h4>').html('Ingredients');
+    //appending those elements to our container div with id of recipes
+    $("#post").append(recipe_title, recipe_image, label, ingredientList);
 }
