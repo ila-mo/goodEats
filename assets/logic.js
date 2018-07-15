@@ -54,17 +54,11 @@ $(".recipe").on("click", function () {
             console.log("This is the Total Price For One Recipe: " + totalPrice[i]);
             console.log("==================================");
         }
-        // post items onto HTML page
-        var recipe_title = $('<h3 class="card-title">').html(title);
-        var recipe_image = $('<img>').attr('src', image_url);
-        var label = $('<h4>').html('Ingredients');
-        //appending those elements to our container div with id of recipes
-        $("#post").append(recipe_title, recipe_image, label, ingredientList);
+       
 
         console.log(queryURL);
     });
 });
-
 
 // ======================
 // TIMER FUNCTION 
@@ -72,6 +66,7 @@ $(".recipe").on("click", function () {
 var waitForPrice;
 
 function waiting() {
+    //waits 3 seconds before quering price 
     waitForPrice = setTimeout(getTotalPrice, 3000);
 }
 
@@ -120,6 +115,7 @@ function getTotalPrice(hitObj) {
         ingredientName = ingredientName.trim();
         console.log("Trimed Ingredients " + ingredientName);
 
+
         // ============
         // WALMART API 
         // ============
@@ -160,4 +156,10 @@ function getTotalPrice(hitObj) {
         var li = $('<li>').html(ingredient + " " + price);
         ingredientList.append(li);
     }
+     // post items onto HTML page
+ var recipe_title = $('<h3 class="card-title">').html(title);
+ var recipe_image = $('<img>').attr('src', image_url);
+ var label = $('<h4>').html('Ingredients');
+ //appending those elements to our container div with id of recipes
+ $("#post").append(recipe_title, recipe_image, label, ingredientList);
 }
