@@ -1,10 +1,9 @@
-// SET UP VARIABLES
+// EDAMAM KEYS
 var appKey = "01aa93d3b53976a284096fb203762782";
 var appId = "5c81a78e"
 var queryItem = "";
 
-
-//Edamam 
+// SET UP GLOBAL VARIABLES
 var recipe = "";
 var title = "";
 var image_url = "";
@@ -16,9 +15,8 @@ var price = "";
 var totalPrice = [0, 0, 0];
 var arrayPrice = [];
 
-
 // =========================
-// CALLING THE FIRST
+// CALLING RECIPES
 // ========================
 $(".recipe").on("click", function () {
     // using term 'this' to identify specific buttons
@@ -46,6 +44,12 @@ $(".recipe").on("click", function () {
             console.log(typeof totalPrice[i]);
 
 
+            // ==============================================
+            // PUT TIMEOUT FUNCTION HERE
+            // REMEMBER TO CLEAR TIMEOUT 
+            // ===============================================
+
+
             console.log("==================================");
             console.log("This is the Total Price For One Recipe: " + totalPrice[i]);
             console.log("==================================");
@@ -62,6 +66,26 @@ $(".recipe").on("click", function () {
 });
 
 
+// ======================
+// TIMER FUNCTION 
+// ======================
+var waitForPrice;
+
+function waiting() {
+    waitForPrice = setTimeout(getTotalPrice, 3000);
+}
+
+function getTotalPrice() {
+    alert("Hello!");
+}
+
+function stopWaiting() {
+    clearTimeout(waitForPrice);
+}
+
+// =========================================================
+// QUERY THE WALMART API TO GET PRICES OF INGREDIENTS
+// =========================================================
 
 function getTotalPrice(hitObj) {
     totalPrice = 0;
@@ -137,5 +161,3 @@ function getTotalPrice(hitObj) {
         ingredientList.append(li);
     }
 }
-
-//getTotalPrice();
