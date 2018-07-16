@@ -1,0 +1,57 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: #35637A;
+    font-family: 'Kanit', sans-serif;
+}
+
+.container1 {
+    /* The image used */
+    background-image: url("../image/searchpage-bg.jpg");
+
+    /* Full height */
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0.5em 0;
+}
+
+.row{
+    background-color: rgba(222, 184, 135, 0.7);
+    height: 200px;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.col{
+    font-size: 50px;
+    padding: 40px;
+}
+
+#static {
+    height: 100px;
+    margin: 15px 0;
+    
+}
+
+.col-static {
+    margin: auto;
+    text-align: center;
+}
+.card {
+    border: solid, 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 100%;
+}
+
+#header-row {
+    min-width: 100%;
+}

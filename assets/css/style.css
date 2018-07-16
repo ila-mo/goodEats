@@ -1,0 +1,68 @@
+body {
+    background-color: #cccccc;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.container1 {
+    /* The image used */
+    background-image: url("../image/homepage-bg.jpg");
+
+    /* Full height */
+    height: 100%;
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-box {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-weight: bolder;
+}
+
+#search-title {
+    margin-top: 20%;
+    color: lightblue;
+}
+
+.footer-text {
+    color: lightblue;
+    margin-top: 16%;
+    text-align: center;
+}
+
+.footer-text2 {
+    color: lightblue;
+    margin-top: 1px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#creator-names {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    text-shadow: 5px;
+}
+
+a:hover {
+    text-decoration-style: dotted;
+    text-shadow: 10px;
+    color: chocolate;
+}
