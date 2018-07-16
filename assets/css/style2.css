@@ -55,3 +55,7 @@ body, html {
 #header-row {
     min-width: 100%;
 }
+
+.dish-price {
+    padding: 0.3em;
+}
