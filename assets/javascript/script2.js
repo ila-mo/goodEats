@@ -30,6 +30,22 @@ $(document).ready(function () {
     backButtonRow.append(backButtonCol);
     $(".container").append(backButtonRow);
 
+    var modal = document.getElementById('myModal');
+    var btnDetail = document.getElementById('.detail-button');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    $(document).on('click','.detail-button',function(){
+        modal.style.display = "block";
+        modalImg.src = recipe.image;
+        captionText.innerHTML = this.alt;
+    });
+
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() { 
+        modal.style.display = "none";
+    }
+
 });
 
 var recipe = {
