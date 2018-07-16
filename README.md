@@ -32,7 +32,7 @@ You may merge the Pull Request in once you have the sign-off of two other develo
 ## Authors
 * **Asha Mohamed** (https://github.com/asham28)
 * **Arpit Shukla** (https://github.com/JackSparrow114)
-* **Ali Muhumed** (https://github.com/asham28)
+* **Ali Muhumed** (https://github.com/ila-mo)
 * **Amyn Merchant** (https://github.com/amynmerchant)
 
 
