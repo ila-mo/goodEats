@@ -44,18 +44,65 @@ body, html {
     margin: auto;
     text-align: center;
 }
-.card {
-    border: solid, 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 200px;
-    width: 100%;
-}
 
 #header-row {
     min-width: 100%;
 }
 
 .dish-price {
-    padding: 0.3em;
+    padding: 1em;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    height: 80%;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ingredients {
+    text-align: center;
+}
+
+.price-row {
+    background-color: rgba(222, 184, 135, 0);
+    height: 80px;
+    width: 100%;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.button-row {
+    background-color: rgba(222, 184, 135, 0);
+    height: 80px;
+    width: 100%;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.detail-button {
+    background-color: #35637A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#back-button-row {
+    background-color: rgba(222, 184, 135, 0);
+}
+
+.back-button {
+    background-color: #35637A;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
