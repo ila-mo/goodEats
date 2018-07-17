@@ -6,17 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Recipe Selection</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
+    <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
+    <!--Ajax-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
-        <!--Google Fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Andada|Kanit" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Andada|Kanit" rel="stylesheet">
+    <!--Ajax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <!--Custom CSS-->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style2.css" />
-    <script src="assets/javascript/script2.js"></script>
+    <!-- JS Script for Responsiveness
+    <script src="assets/javascript/script2.js"></script> -->
+    <!--JS Script for Logic-->
+    <script src="assets/javascript/logic.js"></script>
 </head>
 
 <body>
@@ -29,25 +39,38 @@
         <div class="container">
             <div class="row backgroundDivs text-center col-12">
                 <div class="h1 p-3 text-center font-weight-bold">
-                     What's Cooking Today?
+                    What's Cooking Today?
                 </div>
             </div>
+
+            <!--TESTING FIELD-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="form mb-3 search-box">
+                        <div class="form-group">
+                            <input id="search" type="text" class="form-control" placeholder="Search a yummy dish here!" aria-label="Recipient's username"
+                                aria-describedby="button-addon2" required>
+                        </div>
+                        <div>
+                            <button class="btn btn-secondary" type="submit" id="submitBtn">Show me dishes!!!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <!--RECIPE DETAILS-->
             <div class="row">
                 <div class="col-lg-12 col-m-3">
                     <div class="card backgroundDivs">
-                        <div class="card-heading " id="tableHeader">
-              
-                        </div>
-                        <div class="card-body ">
+                        <div class="card-body">
 
                             <table id="table" class="table table-borderless ">
                                 <thead>
                                     <tr>
-                                        <th scope="col" class="h2 text-center col-md-2">How Does It Look?</th>
-                                        <th scope="col" class="h2 text-center">How Does It Sound?</th>
-                                        <th scope="col" class="h2 text-center">Cost</th>
+                                        <th scope="col" class="h2 text-center col-4">How Does It Look?</th>
+                                        <th scope="col" class="h2 text-center col-4">How Does It Sound?</th>
+                                        <th scope="col" class="h2 text-center col-4">Cost</th>
                                     </tr>
                                 </thead>
                                 <!--Dynamically Populated-->
