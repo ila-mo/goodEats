@@ -1,28 +1,39 @@
 $(document).ready(function () {
 
-    for (i=0; i < 5; i++) {
-        var newRow = $('<div class="row"></div>');
-        var newCol1 = $('<div class="col-2 dish-image"></div>');
-        var newCol2 = $('<div class="col-7 ingredients"></div>');
-        var newCol3 = $('<div class="col-3 dish-price"></div>');
+    for (i=0; i < 3; i++) {
+        var newRow = $('#recipeTable');
+      
+        // IMAGE OF RECIPE
+        var dishImage = $('<td class="dish-image col-lg-4 "></td>');
+        var imagePathHTML = `<img src="${recipe.image}" class="img-thumbnail class-lg-3" alt="image of recipe" >`;
+        dishImage.html(imagePathHTML);
+        newRow.append(dishImage);
 
-        // PRICE HAS ITS OWN ROW
-        var priceRow = $('<div class="row price-row"><div class="col"></div></div>');
-        var buttonRow = $('<div class="row button-row"><div class="col"></div></div>');
-        var imagePathHTML = `<img src="${recipe.image}" alt="" height="100%" width="100%">`;
-        var buttonHTML = `<button class="detail-button">Show Details</button>`;
-        newCol1.html(imagePathHTML);
-        newRow.append(newCol1);
+        // INGREDIENT LIST
+        var ingredientList = $('<td class="ingredients col-lg-5"></td>');
         var listHTML = generateListHTL(recipe.ingredients, recipe.name);
-        newCol2.html(listHTML);
-        newRow.append(newCol2);
+        ingredientList.html(listHTML);
+
+        newRow.append(ingredientList);
+
+        // PRICE OF RECIPE
+        var dishPrice = $('<td class="col-s-12 col-lg-4 dish-price"></td>');
+        var priceRow = $('<div class="row price-row"><div class="h2"></div></div>');
         var costHTML = `<h1>$ ${recipe.cost}</h1>`;
         priceRow.html(costHTML);
+
+        // BUTTONS
+        var buttonRow = $('<div class="row button-row"><div class="col"></div></div>');
+        var buttonHTML = `<button class="detail-button">Show Details</button>`;
         buttonRow.html(buttonHTML);
-        newCol3.append(priceRow);
-        newCol3.append(buttonRow);
-        newRow.append(newCol3);
-        $(".container").append(newRow);
+
+
+        dishPrice.append(priceRow);
+        dishPrice.append(buttonRow);
+        newRow.append(dishImage, ingredientList, dishPrice);
+        // $(".container").append(newRow);
+        $("#recipeTable").append("<tr>" + dishImage  + ingredientList  + dishPrice + "</tr>");
+
     }
 
     var backButtonRow = $('<div class="row" id="back-button-row"></div>');
@@ -61,7 +72,7 @@ var recipe = {
 function generateListHTL(ingreList, name){
     var count = 0;
     var listHTML = '<ul>';
-    listHTML += ('<li><h1>' + name + '<h1></li>');
+    listHTML += ('<li><h2>' + name + '<h2></li>');
     ingreList.forEach(ingre => {
         if(count < 5){
             listHTML += ('<li>' + ingre + '</li>');
