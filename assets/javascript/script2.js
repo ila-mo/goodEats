@@ -1,10 +1,12 @@
 $(document).ready(function () {
 
     for (i=0; i < 5; i++) {
-        var newRow = $('<div class="row "></div>');
+        var newRow = $('<div class="row"></div>');
         var newCol1 = $('<div class="col-2 dish-image"></div>');
         var newCol2 = $('<div class="col-7 ingredients"></div>');
         var newCol3 = $('<div class="col-3 dish-price"></div>');
+
+        // PRICE HAS ITS OWN ROW
         var priceRow = $('<div class="row price-row"><div class="col"></div></div>');
         var buttonRow = $('<div class="row button-row"><div class="col"></div></div>');
         var imagePathHTML = `<img src="${recipe.image}" alt="" height="100%" width="100%">`;
@@ -30,6 +32,7 @@ $(document).ready(function () {
     backButtonRow.append(backButtonCol);
     $(".container").append(backButtonRow);
 
+    // Modal 
     var modal = document.getElementById('myModal');
     var btnDetail = document.getElementById('.detail-button');
     var modalImg = document.getElementById("img01");

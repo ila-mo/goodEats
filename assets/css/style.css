@@ -34,6 +34,8 @@ body, html {
 #search-title {
     margin-top: 20%;
     color: lightblue;
+    font-size: 12px; 
+
 }
 
 .footer-text {
