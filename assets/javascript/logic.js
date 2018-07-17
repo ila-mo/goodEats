@@ -142,12 +142,6 @@ $(document).ready(function () {
                 ingredientList.append(li);
 
             }
-            // price_post = $('<h4>').html(price);
-
-            // ==================================
-            // DISPLAY ITEMS ONTO HTML PAGE 
-            // ==================================
-
             // ==================================
             // DISPLAY ITEMS ONTO HTML PAGE 
             // ==================================
@@ -204,37 +198,6 @@ $(document).ready(function () {
                 modal.style.display = "none";
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            // var recipe_title = $('<h3 class="card-title">').html(title);
-            // var recipe_image = $('<img>').attr('src', image_url);
-            // var label = $('<h4>').html('Ingredients');
-            // //appending those elements to our container div with id of recipes
-            // $("#post").append(recipe_title, recipe_image, label, ingredientList);
-            // console.log(queryURL);
         });
         $.ajax({
             url: queryURL,
@@ -379,13 +342,6 @@ $(document).ready(function () {
                 modal.style.display = "none";
             }
 
-
-            // var recipe_title = $('<h3 class="card-title">').html(title);
-            // var recipe_image = $('<img>').attr('src', image_url);
-            // var label = $('<h4>').html('Ingredients');
-            // //appending those elements to our container div with id of recipes
-            // $("#post").append(recipe_title, recipe_image, label, ingredientList);
-            // console.log(queryURL);
         });
         $.ajax({
             url: queryURL,
@@ -530,21 +486,6 @@ $(document).ready(function () {
                 modal.style.display = "none";
             }
 
-
-
-
-
-
-
-
-
-
-
-            // var recipe_title = $('<h3 class="card-title">').html(title);
-            // var recipe_image = $('<img>').attr('src', image_url);
-            // var label = $('<h4>').html('Ingredients');
-            // //appending those elements to our container div with id of recipes
-            // $("#post").append(recipe_title, recipe_image, label, ingredientList); console.log(queryURL);
         });
     });
 
