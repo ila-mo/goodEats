@@ -115,7 +115,6 @@ $(document).ready(function () {
                     // fetching first item from the items array
                     var name = items[0].name;
                     var price = items[0].salePrice;
-                    var addToCartUrl = items[0].addToCartUrl;
                     console.log("URL:" + addToCartUrl);
                     console.log("Ingrident Name: " + name);
 
@@ -138,7 +137,7 @@ $(document).ready(function () {
                     });
                 });
                 waiting();
-                var li = $('<li>').html(ingredient + "<br> Add To Cart:" + name);
+                var li = $('<li>').html(ingredient);
                 ingredientList.append(li);
 
             }
@@ -257,8 +256,6 @@ $(document).ready(function () {
                     // fetching first item from the items array
                     var name = items[0].name;
                     var price = items[0].salePrice;
-                    var addToCartUrl = items[0].addToCartUrl;
-                    console.log("URL:" + addToCartUrl);
                     console.log("Ingrident Name: " + name);
 
                     console.log("Price: " + price);
@@ -280,7 +277,7 @@ $(document).ready(function () {
                     });
                 });
                 waiting();
-                var li = $('<li>').html(ingredient + "<br> Add To Cart:" + name);
+                var li = $('<li>').html(ingredient);
                 ingredientList.append(li);
 
             }
@@ -401,8 +398,6 @@ $(document).ready(function () {
                     // fetching first item from the items array
                     var name = items[0].name;
                     var price = items[0].salePrice;
-                    var addToCartUrl = items[0].addToCartUrl;
-                    console.log("URL:" + addToCartUrl);
                     console.log("Ingrident Name: " + name);
 
                     console.log("Price: " + price);
@@ -424,7 +419,7 @@ $(document).ready(function () {
                     });
                 });
                 waiting();
-                var li = $('<li>').html(ingredient + "<br> Add To Cart:" + name);
+                var li = $('<li>').html(ingredient);
                 ingredientList.append(li);
 
             }
