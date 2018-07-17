@@ -1,24 +1,24 @@
 $(document).ready(function () {
 
-    for (i=0; i < 2; i++) {
+    for (i=0; i < 3; i++) {
         var newRow = $('#recipeTable');
       
         // IMAGE OF RECIPE
-        var dishImage = $('<td class="dish-image"></td>');
-        var imagePathHTML = `<img src="${recipe.image}" class="img-fluid img-thumbnail" alt="image of recipe" >`;
+        var dishImage = $('<td class="dish-image col-lg-4 "></td>');
+        var imagePathHTML = `<img src="${recipe.image}" class="img-thumbnail class-lg-3" alt="image of recipe" >`;
         dishImage.html(imagePathHTML);
         newRow.append(dishImage);
 
         // INGREDIENT LIST
-        var ingredientList = $('<td class="ingredients"></td>');
+        var ingredientList = $('<td class="ingredients col-lg-5"></td>');
         var listHTML = generateListHTL(recipe.ingredients, recipe.name);
         ingredientList.html(listHTML);
 
         newRow.append(ingredientList);
 
         // PRICE OF RECIPE
-        var dishPrice = $('<td class="col-s-12 dish-price"></td>');
-        var priceRow = $('<div class="row price-row"><div class="col"></div></div>');
+        var dishPrice = $('<td class="col-s-12 col-lg-4 dish-price"></td>');
+        var priceRow = $('<div class="row price-row"><div class="h2"></div></div>');
         var costHTML = `<h1>$ ${recipe.cost}</h1>`;
         priceRow.html(costHTML);
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
         dishPrice.append(buttonRow);
         newRow.append(dishImage, ingredientList, dishPrice);
         // $(".container").append(newRow);
-        $("#recipeTable").append("<tr>" + dishImage + "<td>" + ingredientList + "</td>" + dishPrice + "</tr>");
+        $("#recipeTable").append("<tr>" + dishImage  + ingredientList  + dishPrice + "</tr>");
 
     }
 
@@ -72,7 +72,7 @@ var recipe = {
 function generateListHTL(ingreList, name){
     var count = 0;
     var listHTML = '<ul>';
-    listHTML += ('<li><h1>' + name + '<h1></li>');
+    listHTML += ('<li><h2>' + name + '<h2></li>');
     ingreList.forEach(ingre => {
         if(count < 5){
             listHTML += ('<li>' + ingre + '</li>');
