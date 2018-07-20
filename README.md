@@ -1,4 +1,6 @@
 # Project Title
+The GoodEats app!
+
 You eat best when you know what went into your meal! With health and budget as a priority for the young professionals in metro cities, GoodEats provides a means to address prepared-by-yourself, healthy meal habits with budget considerations.
 
 GoodEats aims to make easy the access to "how-to" and "where-to" of cooking at home.
