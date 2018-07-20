@@ -4,16 +4,19 @@ You eat best when you know what went into your meal! With health and budget as a
 GoodEats aims to make easy the access to "how-to" and "where-to" of cooking at home.
 
 ## Usage
-Available online at (link here).
+https://amynmerchant.github.io/goodEats/
 
 ### Screenshots
-(Add landing page here and possibly search page/modal).
+![alt text](assets/image/homepage-sc.jpg)
+
+![alt text](assets/image/page2.jpg)
 
 ## Deployment
 Deployed using Github.
 
 ## Built With
-* (add APIs here or any libraries used???)
+* HTML, CSS, Javascript, jQuery
+* AJAX, Firebase and regular expressions.
 
 ## Contributing
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.

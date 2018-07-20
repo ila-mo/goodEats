@@ -31,11 +31,15 @@ body, html {
     font-weight: bolder;
 }
 
-#search-title {
-    margin-top: 20%;
-    color: lightblue;
-    font-size: 12px; 
+#logo {
+    font-size: 70px;
+    color: white;
+    margin-top: 10%;
+}
 
+#search-title {
+    margin-top: 2%;
+    color: lightblue;
 }
 
 .footer-text {
