@@ -1,9 +1,10 @@
+
 $(document).ready(function () {
     
 
     var modal = document.getElementById('myModal');
     var btnDetail = document.getElementById('.detail-button');
-    var modalImg = document.getElementById("img01");
+    var modalImg = document.getElementById("img-01");
     var captionText = document.getElementById("caption");
     $(document).on('click','.detail-button',function(event){
         console.log(event.taget);

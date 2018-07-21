@@ -45,9 +45,6 @@ body, html {
     text-align: center;
 }
 
-#header-row {
-    min-width: 100%;
-}
 
 .dish-price {
     padding: 1em;
@@ -68,7 +65,8 @@ img {
 }
 
 .ingredients {
-    text-align: center;
+    text-align: left;
+    
 }
 
 .price-row {
