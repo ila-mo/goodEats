@@ -1,9 +1,5 @@
-// $(document).ready(function(){
-//     alert('hello!');
-// });
-
-
-// Need to use persistent storage (Firebase)
-// User validation --> no numbers 
-// Consider displaying only one dish, but chosen dish is randomized over 10. 
-// 
+$(document).on('click','#submitBtn',function(){
+    var query = $('#inputQuery').val();
+    localStorage.setItem('dishQuery', query);
+    location.href = 'index2.html';
+});

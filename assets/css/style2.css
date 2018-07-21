@@ -3,9 +3,7 @@ body, html {
     width: 100%;
     margin: 0;
     color: #35637A;
-    /* font-family: 'Kanit', sans-serif; */
-    font-family: 'Andada', serif;
-
+    font-family: 'Kanit', sans-serif;
 }
 
 .container1 {
@@ -18,15 +16,37 @@ body, html {
     margin: 0;
     /* Center and scale the image nicely */
     background-position: center;
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-size: cover;
     padding: 0.5em 0;
 }
 
-.backgroundDivs{
+.row{
     background-color: rgba(222, 184, 135, 0.7);
+    height: 200px;
+    width: 100%;
     margin: 15px 0;
     border-radius: 5px;
+}
+
+.col{
+    font-size: 50px;
+    padding: 40px;
+}
+
+#static {
+    height: 100px;
+    margin: 15px 0;
+    
+}
+
+.col-static {
+    margin: auto;
+    text-align: center;
+}
+
+#header-row {
+    min-width: 100%;
 }
 
 .dish-price {
@@ -38,11 +58,26 @@ ul {
     list-style-type: none;
 }
 
-
-.ingredients {
-    text-align: left;
+img {
+    height: 80%;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
+.ingredients {
+    text-align: center;
+}
+
+.price-row {
+    background-color: rgba(222, 184, 135, 0);
+    height: 80px;
+    width: 100%;
+    margin: 2px;
+    border-radius: 5px;
+}
 
 .button-row {
     background-color: rgba(222, 184, 135, 0);
@@ -87,15 +122,34 @@ Modal specific css
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
 .modal-content {
     margin: auto;
     display: block;
-    width: 50%;
-    max-width: 500px;
+    width: 90%;
+    max-width: 50px;
+    height: 90%;
+    max-height: 50px;
+}
+
+.modal-row{
+    background-color: rgba(222, 184, 135, 0.5);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.short-div {
+    float: left;
+    height: 200px;
+    max-width: 40%;
+}
+
+.long-div {
+    height: 400px;
+    max-width: 40%;
 }
 
 /* Caption of Modal Image */
